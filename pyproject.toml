@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ml-for-math-onramp"
+name = "ml4math"
 dynamic = ["version"]
 description = ''
 readme = "README.md"
@@ -24,15 +24,15 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = ["gitpython"]
 
 [project.urls]
-Documentation = "https://github.com/unknown/ml-for-math-onramp#readme"
-Issues = "https://github.com/unknown/ml-for-math-onramp/issues"
-Source = "https://github.com/unknown/ml-for-math-onramp"
+Documentation = "https://github.com/unknown/ml4math#readme"
+Issues = "https://github.com/unknown/ml4math/issues"
+Source = "https://github.com/unknown/ml4math"
 
 [tool.hatch.version]
-path = "src/ml_for_math_onramp/__about__.py"
+path = "src/ml4math/__about__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -59,19 +59,19 @@ dependencies = [
   "mypy>=1.0.0",
 ]
 [tool.hatch.envs.types.scripts]
-check = "mypy --install-types --non-interactive {args:src/ml_for_math_onramp tests}"
+check = "mypy --install-types --non-interactive {args:src/ml4math tests}"
 
 [tool.coverage.run]
-source_pkgs = ["ml_for_math_onramp", "tests"]
+source_pkgs = ["ml4math", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/ml_for_math_onramp/__about__.py",
+  "src/ml4math/__about__.py",
 ]
 
 [tool.coverage.paths]
-ml_for_math_onramp = ["src/ml_for_math_onramp", "*/ml-for-math-onramp/src/ml_for_math_onramp"]
-tests = ["tests", "*/ml-for-math-onramp/tests"]
+ml4math = ["src/ml_for_math_onramp", "*/ml-for-math-onramp/src/ml_for_math_onramp"]
+tests = ["tests", "*/ml4math/tests"]
 
 [tool.coverage.report]
 exclude_lines = [
