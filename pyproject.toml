@@ -70,7 +70,7 @@ omit = [
 ]
 
 [tool.coverage.paths]
-ml4math = ["src/ml_for_math_onramp", "*/ml-for-math-onramp/src/ml_for_math_onramp"]
+ml4math = ["src/ml4math", "*/ml-for-math-onramp/src/ml4math"]
 tests = ["tests", "*/ml4math/tests"]
 
 [tool.coverage.report]
@@ -78,4 +78,10 @@ exclude_lines = [
   "no cov",
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "tutorials/*",
+  "videos/*",
 ]
